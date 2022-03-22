@@ -1,1 +1,1 @@
-# practice
+# master branch is used for productioun version of the software
