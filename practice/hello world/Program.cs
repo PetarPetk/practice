@@ -179,6 +179,143 @@ namespace PracticeStuff
             String userName2 = fullName.Insert(0, "Mr. ");
             Console.WriteLine(userName2);
 
+            Console.WriteLine(fullName.Length);
+
+            String firstName = fullName.Substring(0, 4);
+            String lastName = fullName.Substring(5, 5);
+
+            Console.WriteLine(firstName);   
+            Console.WriteLine(lastName);
+
+
+            // if statements shit USING VARIABLES FROM user input shit
+
+            if (age >100)
+            {
+                Console.WriteLine("You are too old to sign up.");
+            }
+            else if (age < 0)
+            {
+                Console.WriteLine("You haven't been born yet.");
+            }
+            else if (age >= 18)
+            {
+                Console.WriteLine("You are now signed up!" );
+            }
+            else
+            {
+                Console.WriteLine("You must be 18+ to sign up");
+            }
+
+
+            if (name == "")
+            {
+                Console.WriteLine("You have not entered your name!");
+            }
+            else
+            {
+                Console.WriteLine("Hello " + name);
+            }
+
+
+            // switches shit
+
+            Console.WriteLine("What day is it today? ");
+            String day = Console.ReadLine();
+
+            switch (day) 
+            {
+                case "Monday":
+                    Console.WriteLine("It's Monday!");
+                    break;
+                case "Tuesday":
+                    Console.WriteLine("It's Tuesday!");
+                    break;
+                case "Wednesday":
+                    Console.WriteLine("It's Wednesday!");
+                    break;
+                case "Thursday":
+                    Console.WriteLine("It's Thursday!");
+                    break;
+                case "Friday":
+                    Console.WriteLine("It's Party Time!");
+                    break;
+                case "Saturday":
+                    Console.WriteLine("It's Saturday!");
+                    break;
+                case "Sunday":
+                    Console.WriteLine("It's Sunday!");
+                    break;
+                default:
+                    Console.WriteLine(day + " is not a day!");
+                    break;
+            }
+
+
+
+            // logical operators shit
+
+            Console.WriteLine("What's the temperature outside: (C) ");
+            double temp = Convert.ToDouble(Console.ReadLine());
+
+            if(temp >= 10 && temp <= 25)
+            {
+                Console.WriteLine("It's warm outside!");
+            }
+            else if (temp <= -50 || temp >=50)
+            {
+                Console.Write("Do not go outside!");
+            }
+
+
+
+            // while loop shit
+
+            Console.Write("Enter your name: ");
+            String nameLoop = Console.ReadLine();
+
+            while (name == "") 
+            {
+                Console.Write("Enter your name: ");
+                nameLoop = Console.ReadLine();
+            }
+
+            Console.WriteLine("Hello " + nameLoop);
+
+
+            // for loops shit
+
+            for (int index = 0; index < 10; index++)
+            {
+                Console.WriteLine(index);             
+            }
+
+            for (int index = 10; index > 0; index--)
+            { 
+                Console.WriteLine(index);
+            }
+            Console.WriteLine("Happy New Year!!");
+
+
+            // nested loops shit
+
+            Console.WriteLine("How many rows? ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("How many collumns? ");
+            int collumns = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What symbol? ");
+            String symbolRectangle = Console.ReadLine();
+
+           for (int index = 0; index < rows; index++)
+            {
+                for (int index2 = 0; index2 < collumns; index2++)
+                { 
+                    Console.Write(symbolRectangle);
+                }
+                Console.WriteLine();
+            }
 
 
 
