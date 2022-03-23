@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PracticeStuff
+namespace hello_world
 {
     public class Program
     {
@@ -317,12 +317,454 @@ namespace PracticeStuff
                 Console.WriteLine();
             }
 
+           
+           
+           // number guessing game shit
+
+            Random d100 = new Random();
+            bool playAgain = true;
+            int min = 1;
+            int max = 100;
+            int guess;
+            int number;
+            int guesses;
+            String response;
+
+            while (playAgain)
+            {
+                guess = 0;
+                guesses = 0;
+                response = "";
+                number = d100.Next(min, max +1);
+
+                while (guess != number)
+                {
+                    Console.WriteLine("Guess a number between " + min + "-" + max + " : ");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Guess: " + guess);
+
+                    if (guess > number)
+                    {
+                        Console.WriteLine(guess + " is to high!");
+                    }
+                    else if (guess < number)
+                    {
+                        Console.WriteLine(guess + " is to low!");
+                    }
+                    guesses++;
+                }
+                Console.WriteLine("Number: " + number);
+                Console.WriteLine("YOU WIN!");
+                Console.WriteLine("Guesses: " + guesses);
+
+                Console.WriteLine("Would you like to play again? (Y/N) ");
+                response = Console.ReadLine();
+                response = response.ToUpper();
+
+                if (response == "Y")
+                {
+                    playAgain = true;
+                }
+                else
+                {
+                    playAgain = false;
+                }
+            }
+
+            Console.WriteLine("Thanks for playing!");
+
+
+
+            // rock paper scissors game shit
+
+            Random randomFist = new Random();
+            bool playAgain2 = true;
+            String player;
+            String computer;
+            String response2;
+
+            while (playAgain2)
+            {
+                player = "";
+                computer = "";
+                response2 = "";
+                while (player != "ROCK" && player != "PAPER" && player != "SCISSORS")
+                {
+                    Console.WriteLine("Enter ROCK, PAPER or SCISSORS: ");
+                    player = Console.ReadLine();
+                    player = player.ToUpper();                    
+                }
+
+                switch (randomFist.Next(1, 4))
+                {
+                    case 1:
+                        computer = "ROCK";
+                        break;
+                    case 2:
+                        computer = "PAPER";
+                        break;
+                    case 3:
+                        computer = "SCISSORS";
+                        break;
+                }
+
+                Console.WriteLine("Player: " + player);
+                Console.WriteLine("Computer: " + computer);
+
+                switch (player)
+                {
+                    case "ROCK":
+                        if (computer == "ROCK")
+                        {
+                            Console.WriteLine("It's a draw!");
+                        }
+                        else if (computer == "PAPER")
+                        {
+                            Console.WriteLine("You lose!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You win!");
+                        }
+                        break;
+                    case "PAPER":
+                        if (computer == "PAPER")
+                        {
+                            Console.WriteLine("It's a draw!");
+                        }
+                        else if (computer == "SCISSORS")
+                        {
+                            Console.WriteLine("You lose!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You win!");
+                        }
+                        break;
+                    case "SCISSORS":
+                        if (computer == "SCISSORS")
+                        {
+                            Console.WriteLine("It's a draw!");
+                        }
+                        else if (computer == "ROCK")
+                        {
+                            Console.WriteLine("You lose!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You win!");
+                        }
+                        break;
+                }
+                Console.WriteLine("Would you like to play again? (Y/N)");
+                response2 = Console.ReadLine();
+                response2 = response2.ToUpper();
+                if (response2 == "Y")
+                {
+                    playAgain2 = true;
+                }
+                else
+                { 
+                    playAgain2 = false;
+                }
+            }
+            Console.WriteLine("Thanks for playing");
+
+
+            // calculator program shit
+            do
+            {
+                double calcNum1 = 0;
+                double calcNum2 = 0;
+                double calcResult = 0;
+
+                Console.WriteLine("__________________");
+                Console.WriteLine("Calculator Program");
+                Console.WriteLine("__________________");
+
+                Console.Write("Enter number 1: ");
+                calcNum1 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter number 2: ");
+                calcNum2 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter an option: ");
+                Console.WriteLine("\t+: Add");
+                Console.WriteLine("\t-: Subtract");
+                Console.WriteLine("\t*: Multiply");
+                Console.WriteLine("\t/: Divide");
+                Console.Write("Enter an option:");
+
+
+                switch (Console.ReadLine())
+                {
+                    case "+":
+                        calcResult = calcNum1 + calcNum2;
+                        Console.WriteLine($"Your result: {calcNum1} + {num2} = " + calcResult);
+                        break;
+                    case "-":
+                        calcResult = calcNum1 - calcNum2;
+                        Console.WriteLine($"Your result: {calcNum1} - {num2} = " + calcResult);
+                        break;
+                    case "*":
+                        calcResult = calcNum1 * calcNum2;
+                        Console.WriteLine($"Your result: {calcNum1} * {num2} = " + calcResult);
+                        break;
+                    case "/":
+                        calcResult = calcNum1 / calcNum2;
+                        Console.WriteLine($"Your result: {calcNum1} / {num2} = " + calcResult);
+                        break;
+                    default:
+                        Console.WriteLine("That was not a vaild option!");
+                        break;
+                }
+                Console.WriteLine("Would you like to continue? (Y/N): ");
+            } while (Console.ReadLine().ToUpper() == "Y");
+
+            Console.WriteLine("Bye!");
+
+
+            // arrays shit
+
+            String[] cars = new string[4];
+
+            // String[] cars = { "BMW", "Mustang", "Corvette" };
+
+            cars[0] = "Tesla";
+            cars[1] = "BMW";
+            cars[2] = "Lada";
+            cars[3] = "Mustang";
+
+            Console.WriteLine(cars[0]);
+            Console.WriteLine(cars[1]); 
+            Console.WriteLine(cars[2]);
+
+            for (int arrayIndex=0; arrayIndex < cars.Length; arrayIndex++)
+            {
+                Console.WriteLine(cars[arrayIndex]);
+            }
+
+
+            // for each loop shit USES ARRAYS SHIT 
+
+            foreach (String car in cars)
+            {
+                Console.WriteLine(car);
+            }
+
+            // methods shit  METHOD IS OUTSIDE OF MAIN
+
+            String birthdayName = "Kuuroonja";
+            int birthdayAge = 443;
+
+            singHappyBirthday(birthdayName, birthdayAge);
+            singHappyBirthday(birthdayName, birthdayAge);
+            singHappyBirthday(birthdayName, birthdayAge);
+
+            // return keyword shit Multiply METHOD IS OUTSIDE OF MAIN
+
+            double numberOne;
+            double numberTwo;
+            double returnKeywordNumber;
+
+            Console.WriteLine("Enter number one: ");
+            numberOne = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter number two: ");
+            numberTwo = Convert.ToDouble(Console.ReadLine());
+
+            returnKeywordNumber = Multiply(numberOne, numberTwo);
+
+            Console.WriteLine("Your result is: " + numberOne + " * " + numberTwo + " = " + returnKeywordNumber );
+
+
+            // method overloading shit
+
+            double overloadingShit;
+
+            overloadingShit = Multiply(5, 4, 6);
+
+            Console.WriteLine(overloadingShit);
+
+
+            
+            
+            // params keyword shit (a method parameter that takes a variable number of arguments. The parameter type must be a single - dimensional array)
+            // CheckOut METHOD OUTSIDE OF MAIN
+
+            double total = CheckOut(34.5, 532.22, 5352.33, 7);
+
+            Console.WriteLine(total);
+
+
+
+            // exception shit
+
+            int exceptionNumber1;
+            int exceptionNumber2;
+            double exceptionResult;
+
+            try
+            {
+                Console.WriteLine("Enter number 1: ");
+                exceptionNumber1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter number 2: ");
+                exceptionNumber2 = Convert.ToInt32(Console.ReadLine());
+
+                exceptionResult = exceptionNumber1 / exceptionNumber2;
+                Console.WriteLine(exceptionResult);
+            }
+            catch (FormatException exception)
+            {
+                Console.WriteLine("Enter ONLY numbers PLEASE!");
+            }
+            catch(DivideByZeroException excpetion)
+            {
+                Console.WriteLine("You can't divide by zero!");
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Something went wrong!");
+            }
+            finally
+            {
+                Console.WriteLine("Thanks for visiting!");
+            }
+
+
+
+            // conditional operator shit  used in conditional assignmenr if a condition is true/false
+            // (condition) ? x : y ---> x=true y=false
+
+            double temperature = 20;
+            String message;
+
+            if (temperature >= 15)
+            {
+                message = "It's warm outise!";
+            }
+            else
+            {
+                message = "It's cold outside!";
+            }
+            Console.WriteLine(message);
+
+            message = (temperature >= 15) ? "It's warm outside" : "It's cold outside!";
+
+            Console.WriteLine(message);
+
+
+            // string interpolation shit ----> allows us to insert variables into a string literal
+            //                                 precede a string literal with $       {} are placeholders
+
+            String firstName2 = "Kuuuurooonjaaa";
+            String lastName2 = "Kuric";
+            int age12 = 42;
+
+            Console.WriteLine("Hello " + firstName2 + " " + lastName2 + ".");
+            Console.WriteLine("You are " + age12 + " years old.");
+
+            Console.WriteLine($"Hello {firstName2} {lastName2}.");
+            Console.WriteLine($"You are {age12} old.");
+
+
+
+            // multidimensional arrays shit
+
+
+            String[] ford = { "Mustang", "F-150", "Explorer" };
+            String[] chevy = { "Corvette", "Camaro", "Silverado" };
+            String[] toyota = { "Corolla", "Camrry", "Rav4" };
+
+            String[,] parkingLot = { { "Mustang", "F-150", "Explorer" }, 
+                                     { "Corvette", "Camaro", "Silverado" }, 
+                                     { "Corolla", "Camrry", "Rav4" } 
+                                   };
+
+            parkingLot[0, 2] = "Fusion";
+            parkingLot[2, 0] = "Tacoma";
+
+            foreach (String car in parkingLot)
+            {
+                Console.WriteLine(car);
+            }
+
+            for (int arrayShit = 0; arrayShit < parkingLot.GetLength(0); arrayShit++)    //GetLenght(0) 0 is first dimesion in parkingLot[x,y]  ie  x,  1 is second ie y
+            {
+                for (int arrayShit2 = 0; arrayShit2 < parkingLot.GetLength(1); arrayShit2++)
+                {
+                    Console.WriteLine(parkingLot[arrayShit, arrayShit2] + " ");
+                }
+            }
+
+
+            // classes shit   Messages.cs in solution explorer
+
+            Messages.Hello();
+            Messages.Waiting();
+            Messages.Bye();
+
+
+            // objects shit  Human.cs in solution explorer
+
+
+            Human human1 = new Human();
+            Human human2 = new Human();
+
+            human1.name = "Ricky";
+            human1.age = 42;
+            human1.name = "Denzel";
+            human1.age = 50;
+
+            human1.Eat();
+            human1.Sleep();
+
+            human2.Eat();
+            human2.Sleep();
+
+
+            // constructors shit
+
 
 
 
             Console.ReadKey();
-
-
         }
+
+
+       
+
+
+
+        static void singHappyBirthday(String birthdayName, int birthdayAge)
+        {
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine("Happy birthday dear " + birthdayName);
+            Console.WriteLine("You are " + birthdayAge + "years old!");
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine();
+        }
+        static double Multiply(double numberOne, double numberTwo)
+        {
+            double numberThree = numberOne * numberTwo;
+            return numberThree;
+        }
+        static double Multiply(double numberOne, double numberTwo, double numberOverload)
+        {
+            double numberThree = numberOne * numberTwo * numberOverload;
+            return numberThree;
+        }
+        static double CheckOut(params double[] prices)
+        {
+            double total = 0;
+
+            foreach (double price in prices)
+            {
+                total += price;
+            }
+            return total;
+        }
+        
     }
 }
