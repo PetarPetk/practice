@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace hello_world
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -14,7 +16,7 @@ namespace hello_world
             Console.Beep();           
 
             
-            
+            /**
             // variables shit
             int x;
             x = 123;
@@ -41,15 +43,20 @@ namespace hello_world
             Console.WriteLine(y);
             Console.WriteLine(x + y);
             Console.WriteLine(z);
+            */
 
 
 
+            /**
             // constants shit
 
             const double pi = 3.14159;
             Console.WriteLine(pi);
+            */
 
 
+
+            /**
             // type casting shit
 
             double a = 3.14;
@@ -73,8 +80,11 @@ namespace hello_world
             Console.WriteLine(f + " type is " + f.GetType());
             Console.WriteLine(h + " type is " + h.GetType());
             Console.WriteLine(i + " type is " + i.GetType());
+            */
 
 
+
+            /**
             // user input shit
 
             Console.WriteLine("Write your name please: ");
@@ -85,8 +95,10 @@ namespace hello_world
 
             Console.WriteLine("Hello " + nameInput);
             Console.WriteLine("You are " + ageInput + " years old.");
+            */
 
 
+            /**
             // arithmetic shit
 
             int friends = 10;
@@ -108,9 +120,11 @@ namespace hello_world
             int remainder = friends % 3;  //<-- remainder
 
             Console.WriteLine(remainder);
+            */
 
 
 
+            /**
             //math shit
 
             double numberMath1 = 3.99;
@@ -134,8 +148,10 @@ namespace hello_world
             Console.WriteLine(numberMathResult7);
 
             Console.WriteLine(friends);
+            */
 
 
+            /**
             //rng shit
 
             Random random = new Random();
@@ -149,8 +165,10 @@ namespace hello_world
             Console.WriteLine(num1);
             Console.WriteLine(num2);
             Console.WriteLine(num3);
+            */
 
 
+            /**
             // hypotenuse program shit
 
             Console.WriteLine("Enter side A: ");
@@ -162,8 +180,9 @@ namespace hello_world
             double sideC = Math.Sqrt((sideA * sideA) + (sideB * sideB));
 
             Console.WriteLine("Hypotenuse is: " + sideC);
+            */
 
-
+            /**
             // string methods shit
 
             String fullName = "Kuro Kuric";
@@ -186,8 +205,10 @@ namespace hello_world
 
             Console.WriteLine(firstName);   
             Console.WriteLine(lastName);
+            */
 
 
+            /**
             // if statements shit USING VARIABLES FROM user input shit
 
             if (age >100)
@@ -216,8 +237,11 @@ namespace hello_world
             {
                 Console.WriteLine("Hello " + name);
             }
+            */
 
 
+
+            /**
             // switches shit
 
             Console.WriteLine("What day is it today? ");
@@ -250,9 +274,10 @@ namespace hello_world
                     Console.WriteLine(day + " is not a day!");
                     break;
             }
+            */
 
 
-
+            /**
             // logical operators shit
 
             Console.WriteLine("What's the temperature outside: (C) ");
@@ -266,9 +291,9 @@ namespace hello_world
             {
                 Console.Write("Do not go outside!");
             }
+            */
 
-
-
+            /**
             // while loop shit
 
             Console.Write("Enter your name: ");
@@ -281,8 +306,10 @@ namespace hello_world
             }
 
             Console.WriteLine("Hello " + nameLoop);
+            */
 
 
+            /**
             // for loops shit
 
             for (int index = 0; index < 10; index++)
@@ -295,8 +322,9 @@ namespace hello_world
                 Console.WriteLine(index);
             }
             Console.WriteLine("Happy New Year!!");
+            */
 
-
+            /**
             // nested loops shit
 
             Console.WriteLine("How many rows? ");
@@ -316,9 +344,10 @@ namespace hello_world
                 }
                 Console.WriteLine();
             }
+           */
 
            
-           
+           /**
            // number guessing game shit
 
             Random d100 = new Random();
@@ -372,9 +401,12 @@ namespace hello_world
             }
 
             Console.WriteLine("Thanks for playing!");
+            */
 
 
 
+
+            /**
             // rock paper scissors game shit
 
             Random randomFist = new Random();
@@ -469,9 +501,11 @@ namespace hello_world
                 }
             }
             Console.WriteLine("Thanks for playing");
+            */
 
 
-            // calculator program shit
+
+            /** calculator program shit
             do
             {
                 double calcNum1 = 0;
@@ -521,8 +555,10 @@ namespace hello_world
             } while (Console.ReadLine().ToUpper() == "Y");
 
             Console.WriteLine("Bye!");
+            */
 
 
+            /**
             // arrays shit
 
             String[] cars = new string[4];
@@ -543,7 +579,9 @@ namespace hello_world
                 Console.WriteLine(cars[arrayIndex]);
             }
 
+            */
 
+            /**
             // for each loop shit USES ARRAYS SHIT 
 
             foreach (String car in cars)
@@ -594,9 +632,10 @@ namespace hello_world
             double total = CheckOut(34.5, 532.22, 5352.33, 7);
 
             Console.WriteLine(total);
+            */
 
 
-
+            /**
             // exception shit
 
             int exceptionNumber1;
@@ -616,20 +655,21 @@ namespace hello_world
             }
             catch (FormatException exception)
             {
-                Console.WriteLine("Enter ONLY numbers PLEASE!");
+                Console.WriteLine("Enter ONLY numbers PLEASE!" + exception);
             }
-            catch(DivideByZeroException excpetion)
+            catch(DivideByZeroException exception)
             {
-                Console.WriteLine("You can't divide by zero!");
+                Console.WriteLine("You can't divide by zero!" + exception);
             }
             catch (Exception exception)
             {
-                Console.WriteLine("Something went wrong!");
+                Console.WriteLine("Something went wrong!" + exception);
             }
             finally
             {
                 Console.WriteLine("Thanks for visiting!");
             }
+            */
 
 
 
@@ -708,13 +748,13 @@ namespace hello_world
             // objects shit  Human.cs in solution explorer
 
 
-            Human human1 = new Human();
-            Human human2 = new Human();
+            Human human1 = new Human("Ricky", 42);
+            Human human2 = new Human("Denzel", 50);
 
             human1.name = "Ricky";
             human1.age = 42;
-            human1.name = "Denzel";
-            human1.age = 50;
+            human2.name = "Denzel";
+            human2.age = 50;
 
             human1.Eat();
             human1.Sleep();
@@ -725,17 +765,283 @@ namespace hello_world
 
             // constructors shit
 
+            Human human3 = new Human("Ricky", 42);
+            Human human4 = new Human("Denzel", 50);
 
+            Car car1 = new Car("Ford", "Mustang", 2022, "red");
+            Car car2 = new Car("Chevy", "Corvette", 2020, "blue");
+
+            car1.Drive();
+            car2.Drive();
+
+
+            // static shit
+
+            Car car3 = new Car("Lada", "Niva", -442, "brown");
+
+            Console.WriteLine(Car.numberOfCars);
+
+            Car.StartRace();
+
+
+            // overloaded construcotrs shit
+
+            Pizza pizza = new Pizza("stuffed crust", "red sauce", "mozzarella");
+
+
+            // inheritance shit
+
+            RogueClass rogue = new RogueClass();
+
+            rogue.Die();
+            rogue.LongRest();
+
+            PaladinClass paladin = new PaladinClass(); 
+
+            paladin.LevelUp();
+            Console.WriteLine(paladin.className + "" + paladin.speed);
+
+
+
+            // abstract classes shit ---> modifier that indicates missing components or incomplete implementation
+            //  abstract class DndClasses {} ------> can't do DndClasses dndclasses  = new DndClasses;
+
+
+            // array of objects shit
+
+            Car[] garage = new Car[4];
+
+            Car car4 = new Car("Ford", "Mustang", 2022, "red");
+            Car car5 = new Car("Chevy", "Corvette", 2020, "blue");
+            Car car6 = new Car("Lada", "Njiva", 1990, "brown");
+            Car car7 = new Car("Zetor", "Makeshift", 1970, "red");
+
+            garage[0] = car4;
+            garage[1] = car5;
+            garage[2] = car6;
+            garage[3] = car7;
+
+            Console.WriteLine(garage[0]);
+            Console.WriteLine(garage[0].model);
+            Console.WriteLine(garage[1].model);
+            Console.WriteLine(garage[2].model);
+            Console.WriteLine(garage[3].model);
+
+            Car[] garage2 = { new Car("Ford", "Mustang", 2022, "red"), 
+                              new Car("Chevy", "Corvette", 2020, "blue"), 
+                              new Car("Lada", "Njiva", 1990, "brown"), 
+                              new Car("Zetor", "Makeshift", 1970, "red") };
+
+            foreach (Car car in garage)
+            {
+                Console.WriteLine(car.model);   
+            }
+
+
+
+            // objects as arguments
+
+            Car car8 = new Car("Zetor", "4511", 1970, "red");
+            
+
+            Console.WriteLine(car8.make + " " + car8.model + " " + car8.color);
+            Car car9 = Car.Copy(car8);
+
+            Car.ChangeColor(car8, "gold");
+
+            Console.WriteLine(car8.make + " " + car8.model + " " + car8.color);
+            Console.WriteLine(car9.make + " " + car9.model + " " + car9.color);
+
+
+            // method overriding shit ----->parent inherited method must be abstract, virtual or already overriden ---  used with ToString(), polymoprphism
+
+            RogueClass  rogue2 = new RogueClass();
+            PaladinClass paladin2 = new PaladinClass();
+            BardClass bard2 = new BardClass();
+
+            rogue2.Die();
+            paladin2.Die();
+            bard2.Die();
+
+
+            // ToString() shit  -------> method overriden in Car class
+
+            Car car10 = new Car("Daewoo", "Lanos", 2000, "silver");
+
+            Console.WriteLine(car10.ToString());
+            Console.WriteLine(car10);
+
+
+            // polymorphism shit ----------> object can be identified b more than one type
+
+            RogueClass rogue3 = new RogueClass();
+            PaladinClass paladin3 = new PaladinClass();
+            BardClass bard3 = new BardClass();
+
+            DndClasses[] dndClasses = {rogue3, paladin3, bard3};
+
+            foreach (DndClasses dndClass in dndClasses)
+            {
+                dndClass.Move();
+            }
+
+
+            // interface shit   ----------> Animals folder      a contract that all classes inheriting interface should follow,
+            //                                                  but it only contains what a class should have,
+            //                                                  and a class contains how it should do it
+            Hawk hawk = new Hawk(); 
+            Fish fish = new Fish();
+            Rabbit rabbit = new Rabbit();
+            rabbit.Flee();
+            hawk.Hunt();
+            fish.Hunt();
+            fish.Flee();
+
+
+
+            //List shit -------> using System.Collections.Generic;
+
+            List<String> food = new List<String>();
+
+            food.Add("chicken livers");
+            food.Add("pizza");
+            food.Add("hladetina");
+            food.Add("chicken livers");
+            food.Add("cheese");
+
+           
+            food.Remove("cheese");
+            food.Insert(0, "sushi");
+            Console.WriteLine(food.Count);
+            Console.WriteLine(food.IndexOf("pizza"));
+            Console.WriteLine(food.LastIndexOf("chicken livers"));
+            Console.WriteLine(food.Contains("fries"));
+            food.Sort();
+            food.Reverse();
+
+            Console.WriteLine(food[0]);                      
+            
+                                                  //convert to array
+            String[] foodArray = food.ToArray();
+
+            foreach (String item in foodArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            food.Clear();
+
+            //list of objects shit
+
+            List<Player> players = new List<Player>();
+
+            Player player1 = new Player("Gigachad");
+            Player player2 = new Player("Sperg");
+            Player player3 = new Player("n00b");
+            Player player4 = new Player("Cheater");
+
+            players.Add(player1);
+            players.Add(player2);
+            players.Add(player3);
+            players.Add(player4);
+            players.Add(new Player("Šime"));
+
+            foreach (Player player in players)
+            {
+                Console.WriteLine(player);   //ToString() overriden in class
+            }
+
+
+            //getters and setters shit
+
+            Bike bike = new Bike("Akrapovich", 80);
+            bike.Speed = 2314234;
+
+            Console.WriteLine(bike.Speed);
+
+
+            // auto implemented properties shit    --------> Bike class
+
+            Bike bike2 = new Bike("Akrapovich", 32);
+
+            Console.WriteLine(bike2.Model);
+
+
+            // enums shit   -----> it's used when you have values that you know will not change
+
+            Console.WriteLine(Planets.Earth + " is a planet #" + (int)Planets.Earth);
+
+
+            String planetName = PlanetRadius.Earth.ToString();
+            int planetRadius = (int)PlanetRadius.Earth;
+            double planetVolume = Volume(PlanetRadius.Earth);
+
+            Console.WriteLine("planet: " + planetName);
+            Console.WriteLine("radius: " + planetRadius + "km");
+            Console.WriteLine("volume: " + planetVolume + "km^3");
+
+
+            // generics shit
+
+            int[] intArray = { 1, 2, 3, 4 };
+            double[] doubleArray = { 1.3, 2.4, 5.2 };
+            String[] stringArray = { "one", "two", "three" };
+
+            displayElements(intArray);
+            displayElements(doubleArray);
+            displayElements(stringArray);
+
+
+            // multithreading shit    ----------->  using System.Threading;
+
+            Thread poglavica = Thread.CurrentThread;
+            poglavica.Name = "Menetuch";
+            Console.WriteLine(poglavica.Name);
+
+            Thread thread1 = new Thread(() => CountDown("Timer #1"));
+            Thread thread2 = new Thread(() => CountUp("Timer #2"));
+            thread1.Start();
+            thread2.Start();
+
+            
+            Console.WriteLine(poglavica.Name + " is complete!");
 
 
             Console.ReadKey();
         }
 
-
+        public static void CountDown(String name)
+        {
+            for(int kurac = 10; kurac >= 0; kurac--)
+            {
+                Console.WriteLine("Timer #1 : " +kurac+ "seconds");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("Timer #1 is complete!");
+        }
+        public static void CountUp(String name)
+        {
+            for (int kurac = 0; kurac <= 10; kurac++)
+            {
+                Console.WriteLine("Timer #2 : " + kurac + "seconds");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("Timer #2 is complete!");
+        }
+        public static void displayElements<DJENERIK>(DJENERIK[] kuronja)
+        {
+            foreach (DJENERIK item in kuronja)
+            {
+                Console.Write(item + " ");
+            }
+        }
        
-
-
-
+        public static double Volume(PlanetRadius planetRadius)
+        {
+            double planetVolume = (4 / 3) * Math.PI * Math.Pow((int)planetRadius, 3);
+            return planetVolume;  
+        }
+        
         static void singHappyBirthday(String birthdayName, int birthdayAge)
         {
             Console.WriteLine("Happy birthday to you!");
@@ -766,5 +1072,29 @@ namespace hello_world
             return total;
         }
         
+    }
+    enum Planets
+    {
+        Mercury = 1,
+        Venus = 2,
+        Earth = 3,
+        Mars = 4,
+        Jupiter = 5,
+        Saturn = 6,
+        Uranus = 7,
+        Neptune = 8,
+        Pluto = 9
+    }
+    enum PlanetRadius
+    {
+        Mercury = 2439,
+        Venus = 6051,
+        Earth = 6371,
+        Mars = 3389,
+        Jupiter = 69911,
+        Saturn = 58232,
+        Uranus = 25362,
+        Neptune = 24622,
+        Pluto = 1188
     }
 }
